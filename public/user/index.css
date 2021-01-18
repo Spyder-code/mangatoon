@@ -1,0 +1,344 @@
+
+
+/* perangkat saya untuk debug UI */
+/* gunakan ini contoh : <body debug> */
+/* maka semua element yang di bawah akan memberikan line saat mouse hover atau click */
+[debug]   *:hover {
+  outline: 2px solid hsla(0,80%,50%,0.5);
+}
+
+
+
+
+/* ROOT MYKIT */
+.bold { font-weight: 600; }
+.italic { font-style: italic; }
+.underline { text-decoration: underline; }
+.normal { font-weight: 400; }
+.serif { font-family: serif; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* THEME OVERRIDER */
+/* 
+=== default uikit ===
+primary: #1e87f0;
+secondary: #222;
+muted: #999;
+
+== costum override ===
+primary: #00bfff;  // defrecated
+primary: hsl(180, 50%, 50%);
+secondary: ;
+muted: ;
+
+
+*/
+  a,
+  .uk-link {
+    color: #00bfff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  a:hover,
+  .uk-link:hover,
+  .uk-link-toggle:hover .uk-link,
+  .uk-link-toggle:focus .uk-link {
+    color: #00bfff;
+    text-decoration: underline;
+  }
+  a.uk-link-heading,
+  .uk-link-heading a {
+    color: inherit;
+  }
+  a.uk-link-heading:hover,
+  .uk-link-heading a:hover,
+  .uk-link-toggle:hover .uk-link-heading,
+  .uk-link-toggle:focus .uk-link-heading {
+    color: #00bfff !important;
+    text-decoration: none;
+  }
+  /* Color modifiers
+   ========================================================================== */
+  .__costum   .uk-text-muted {
+    color: #999 !important;
+  }
+  .__costum   .uk-text-emphasis {
+    color: #333 !important;
+  }
+  .__costum   .uk-text-primary {
+    color: hsl(180, 50%, 50%) !important;
+  }
+  .__costum   .uk-text-secondary {
+    color: #222 !important;
+  }
+  .__costum   .uk-text-success {
+    color: #32d296 !important;
+  }
+  .__costum   .uk-text-warning {
+    color: #faa05a !important;
+  }
+  .__costum   .uk-text-danger {
+    color: #f0506e !important;
+  }
+  /* Style modifiers
+   ========================================================================== */
+  /*
+   * Default
+   */
+  .cs-tile-default {
+    background: #fff;
+  }
+  /*
+   * Muted
+   */
+  .cs-tile-muted {
+    background: #f8f8f8;
+  }
+  /*
+   * Primary
+   */
+  .cs-tile-primary {
+    background: #00bfff;
+  }
+  .cs-tile-primary-2 {
+    background: hsl(150, 50%, 90%);
+  }
+  /*
+   * Secondary
+   */
+  .cs-tile-secondary {
+    background: #222;
+  }
+  .cs-tile-secondary   * {
+    color: #fff;
+  }
+
+  .__costum   .uk-badge {
+    color: #fff !important;
+    background-color: #00bfff;
+  }
+  .__costum   .uk-input:hover {
+    border-color: #00bfff;
+  }
+  .__costum   .uk-input:focus {
+    border-color: #00bfff;
+  }
+
+
+
+  
+  /* Style modifiers
+  ========================================================================== */
+  .__costum   .uk-button-clear {
+    background-color: transparent;
+    font-size: 1em;
+    color: inherit !important;
+  }
+  /*
+   * Default
+   */
+  .__costum   .uk-button-default {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #e5e5e5;
+  }
+  /* Hover + Focus */
+  .__costum   .uk-button-default:hover,
+  .__costum   .uk-button-default:focus {
+    background-color: transparent;
+    color: #333;
+    border-color: #00bfff;
+  }
+  /* OnClick + Active */
+  .__costum   .uk-button-default:active,
+  .__costum   .uk-button-default.uk-active {
+    background-color: transparent;
+    color: #333;
+    border-color: #999999;
+  }
+  /*
+   * Primary
+   */
+  .__costum   .uk-button-primary {
+    background-image: linear-gradient(to right, hsl(180, 80%, 50%), hsl(160, 80%, 50%)) !important;
+    color: #fff !important;
+    border: 1px solid transparent;
+  }
+  .__costum   .uk-button-primary   * {
+    color: #fff !important;
+  }
+  /* Hover + Focus */
+  .__costum   .uk-button-primary:hover,
+  .__costum   .uk-button-primary:focus {
+    background-image: linear-gradient(to right, hsl(180, 50%, 50%), hsl(160, 50%, 50%)) !important;
+    color: #fff;
+  }
+  /* OnClick + Active */
+  .__costum   .uk-button-primary:active,
+  .__costum   .uk-button-primary.uk-active {
+    background-color: #0e6dcd;
+    color: #fff;
+  }
+  /*
+   * Secondary
+   */
+  .__costum   .uk-button-secondary {
+    background-color: #222;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  /* Hover + Focus */
+  .__costum   .uk-button-secondary:hover,
+  .__costum   .uk-button-secondary:focus {
+    background-color: #151515;
+    color: #fff;
+  }
+  /* OnClick + Active */
+  .__costum   .uk-button-secondary:active,
+  .__costum   .uk-button-secondary.uk-active {
+    background-color: #080808;
+    color: #fff;
+  }
+  /*
+   * Danger
+   */
+  .__costum   .uk-button-danger {
+    background-color: #f0506e;
+    color: #fff;
+    border: 1px solid transparent;
+  }
+  /* Hover + Focus */
+  .__costum   .uk-button-danger:hover,
+  .__costum   .uk-button-danger:focus {
+    background-color: #ee395b;
+    color: #fff;
+  }
+  /* OnClick + Active */
+  .__costum   .uk-button-danger:active,
+  .__costum   .uk-button-danger.uk-active {
+    background-color: #ec2147;
+    color: #fff;
+  }
+  /*
+   * Disabled
+   * The same for all style modifiers
+   */
+  .__costum   .uk-button-default:disabled,
+  .__costum   .uk-button-primary:disabled,
+  .__costum   .uk-button-secondary:disabled,
+  .__costum   .uk-button-danger:disabled {
+    background-color: transparent;
+    color: #999;
+    border-color: #e5e5e5;
+  }
+  /* costum kit */
+  /*.__costum   .uk-navbar-nav > * > a {
+    color: #222;
+    font-weight: 500;
+  } 
+  .__costum   .uk-navbar-nav > * > a:hover {
+    color: #00bfff !important;
+  }*/
+
+
+
+
+
+
+
+
+
+
+
+
+.cs-flip-card {
+  width: 100%;
+  height: 400px;
+  perspective: 1000px;
+}
+
+.cs-flip-card-inner {
+  position: relative;
+  margin: auto;
+  width: 300px;
+  height: 100%;
+  transition: transform 0.7s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+  /*.cs-flip-card:hover .cs-flip-card-inner {
+    height: 100%;
+    transform: rotateY(180deg);
+  }*/
+
+.cs-flip-card-front, .cs-flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.cs-flip-card-back {
+  transform: rotateY(180deg);
+}
+
+
+
+
+
+
+
+.cs-shadow {
+  box-shadow: 2px 2px 3px 0 rgba(0,0,0,0.6);
+}
+
+
+
+
+
+
+.uk-button-gold {
+  background-color: hsl(50, 60%, 50%);
+  color: #fff;
+  border: 1px solid transparent;
+}
+/* Hover + Focus */
+.uk-button-gold:hover,
+.uk-button-gold:focus {
+  background-color: hsl(50, 50%, 45%);
+  color: #fff;
+}
+/* OnClick + Active */
+.uk-button-gold:active,
+.uk-button-gold.uk-active {
+  background-color: hsl(50, 50%, 45%);
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+.genre-list > .uk-nav > a {
+  margin-left: 0;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: #fff;
+}
