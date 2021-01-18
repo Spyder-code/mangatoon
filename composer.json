@@ -9,16 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5",
-        "anam/phantomjs-linux-x86-binary": "^2.1",
-        "anam/phantommagick": "^2.0",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.5",
         "laravel/framework": "^7.24",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "2.4",
-        "spatie/browsershot": "^3.40"
+        "laravel/ui": "2.4"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
