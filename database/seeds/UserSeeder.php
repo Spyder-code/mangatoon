@@ -18,12 +18,14 @@ class UserSeeder extends Seeder
             'email' => 'almi@yahoo.com',            
             'password' => Hash::make('admin123'),            
             'role' => 'admin',            
+            'image' => 'admin.jpg',            
         ]);
         User::create([
             'name' => 'luay',            
             'email' => 'luay@yahoo.com',            
             'password' => Hash::make('admin123'),            
             'role' => 'member',            
+            'image' => 'member.jpg',            
         ]);
     }
 }

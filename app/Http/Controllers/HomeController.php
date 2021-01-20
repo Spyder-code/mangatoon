@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -39,5 +40,16 @@ class HomeController extends Controller
     public function mainAdmin()
     {
         return view('admin.index');
+    }
+
+    public function listMember()
+    {
+        $data = User::all()->where('role','member');
+        return view('admin.listMember', compact('data'));
+    }
+
+    public function profile()
+    {
+        return view('admin.profile');
     }
 }

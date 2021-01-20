@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Genre;
 use App\GenreComic;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,9 @@ class GenreComicController extends Controller
      */
     public function index()
     {
-        //
+        dd('ok');
+        $data = Genre::all();
+        return view('admin.genre.index',compact('data'));
     }
 
     /**

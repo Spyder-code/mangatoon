@@ -18,10 +18,10 @@ class CreateKomiksTable extends Migration
             $table->foreignId('id_user')->constrained('users');
             $table->string('jenis');
             $table->string('judul');
-            $table->string('status');
             $table->string('cover');
             $table->string('cover_banner');
             $table->string('deskripsi');
+            $table->integer('status');
             $table->timestamps();
         });
     }

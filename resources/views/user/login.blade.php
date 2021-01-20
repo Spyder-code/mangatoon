@@ -1,70 +1,89 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.user')
+@section('content')
+<div class="uk-position-absolute uk-container" style="left:1; right:0;">
+    <img src="{{ asset('user/pictures/BBO-logo-name.png') }}" width="200px" height="200px">
+</div>
 
-<head>
-  <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Star Admin</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" integrity="sha512-n+g8P11K/4RFlXnx2/RW1EZK25iYgolW6Qn7I0F96KxJibwATH3OoVCQPh/hzlc4dWAwplglKX8IVNVMWUUdsw==" crossorigin="anonymous" />
-    <link rel="stylesheet" href="{{ asset('dashboard/css/style.css') }}" />
-    <link rel="shortcut icon" href="{{ asset('dashboard/images/favicon.png') }}" />
-</head>
 
-<body>
-    <div class="container-scroller">
-        <div class="container-fluid">
-        <div class="row">
-            <div class="content-wrapper full-page-wrapper d-flex align-items-center auth-pages">
-            <div class="card col-lg-4 mx-auto">
-                <div class="card-body px-5 py-5">
-                <h3 class="card-title text-left mb-3">Login</h3>
-                <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="form-group">
-                        <input id="email" type="email" class="form-control p_input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                    </div>
-                    <div class="form-group">
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
+<div class="uk-position-absolute uk-height-viewport uk-flex uk-flex-middle">
+    <div class="uk-flex uk-flex-column uk-background-default uk-box-shadow-medium">
+        <a href="{{ route('login.facebook') }}" class="uk-padding-small">
+            <span class="fab fa-facebook fa-2x :: uk-text-primary"></span>
+        </a>
+        <a href="{{ route('login.github') }}" class="uk-padding-small">
+            <span class="fab fa-github fa-2x :: uk-text-primary"></span>
+        </a>
+        <a href="{{ route('login.google') }}" class="uk-padding-small">
+            <span class="fab fa-google-plus fa-2x :: uk-text-primary"></span>
+        </a>
+    </div>
+</div>
 
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                    </div>
-                    <div class="form-group d-flex align-items-center justify-content-between">
-                    <div class="form-check"><label><input type="checkbox" class="form-check-input">Remember me</label></div>
-                        <a href="#" class="forgot-pass">Forgot password</a>
-                    </div>
-                    <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block enter-btn">LOG IN</button>
-                    </div>
-                    {{-- <p class="Or-login-with my-3">Or login with</p>
-                    <a href="#" class="facebook-login btn btn-facebook btn-block">Sign in with Facebook</a>
-                    <a href="#" class="google-login btn btn-google btn-block">Sign in with Google+</a> --}}
-                    <a href="{{ url('daftar') }}" class="google-login btn btn-create-account btn-block">Create An Account</a>
-                </form>
+
+
+
+
+
+
+
+<div class="uk-flex uk-flex-middle uk-width-viewport uk-height-viewport" style="padding:10%">
+
+
+    <div class="uk-margin-auto uk-box-shadow-large uk-width-1-2@s">
+        <div class="cs-tile-secondary uk-padding">
+            <div class="uk-text-center">
+                <img src="{{ asset('user/pictures/BBO-logo-masuk.png') }}" width="150px" height="150px">
+            </div>
+            <form class="uk-position-relative" method="POST" action="{{ route('login') }}">
+                @csrf
+                <div class="uk-margin-small-bottom">
+                    <input class="uk-input uk-text-secondary @error('email') is-invalid @enderror" type="email" name="email" placeholder="email" autocomplete="off">
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="uk-margin-small-bottom">
+                    <input class="uk-input uk-text-secondary @error('password') is-invalid @enderror" type="password" name="password" placeholder="password" autocomplete="off">
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                </div>
+                <div class="uk-position-absolute uk-width-expand uk-padding uk-padding-remove-vertical" style="top:120%;">
+                    <button class="uk-button uk-button-primary uk-width-expand uk-box-shadow-large" type="submit">masuk</button>
+                </div>
+            </form>
+        </div>
+        <br>
+
+        <div class="uk-container">
+            <div class="uk-grid uk-grid-collapse">
+                <div class="uk-width-expand uk-padding-small">
+                    <a href="{{ route('login.google') }}" class="uk-button uk-button-default uk-width-expand uk-box-shadow-large">
+                        <span class="fab fa-google"></span>
+                    </a>
+                </div>
+                <p class="uk-flex uk-flex-middle">||</p>
+                <div class="uk-width-expand uk-padding-small">
+                    <a href="{{ route('login.facebook') }}" class="uk-button uk-button-default uk-width-expand uk-box-shadow-large">
+                        <span class="fab fa-facebook"></span>
+                    </a>
                 </div>
             </div>
+        </div>
+
+
+        <div class="uk-box-shadow-medium uk-width-expand" style="top:1; bottom:0;">
+            <div class="uk-container uk-text-center uk-padding-small">
+                <h6><small>Copyright 2020 <a href="#">Baca Buku Online</a>, All Right Reserved.</small></h6>
             </div>
         </div>
-        </div>
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="{{ asset('dashboard/dist/js/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('dashboard/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('dashboard/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('dashboard/js/misc.js') }}"></script>
-</body>
 
-</html>
+</div>
+@endsection

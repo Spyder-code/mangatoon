@@ -15,7 +15,7 @@ class CreateImagesComicsTable extends Migration
     {
         Schema::create('images_comics', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_chapter')->constrained('chapters');
+            $table->foreignId('id_chapter')->constrained('chapters')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('image');
             $table->integer('order');
             $table->timestamps();

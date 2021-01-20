@@ -14,7 +14,9 @@ class KomikController extends Controller
      */
     public function index()
     {
-        //
+        $komik = Komik::all()->where('jenis','komik');
+        $novel = Komik::all()->where('jenis','novel');
+        return view('admin.buku.index',compact('komik','novel'));
     }
 
     /**
@@ -81,5 +83,12 @@ class KomikController extends Controller
     public function destroy(Komik $komik)
     {
         //
+    }
+
+    public function validasi()
+    {
+        $komik = Komik::all()->where('jenis','komik')->where('status',0);
+        $novel = Komik::all()->where('jenis','novel')->where('status',0);
+        return view('admin.buku.validasi',compact('komik','novel'));
     }
 }

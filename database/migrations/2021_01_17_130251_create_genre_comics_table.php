@@ -15,8 +15,8 @@ class CreateGenreComicsTable extends Migration
     {
         Schema::create('genre_comics', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_komik')->constrained('komik');
-            $table->foreignId('id_genre')->constrained('genre');
+            $table->foreignId('id_komik')->constrained('komik')->cascadeOnUpdate()->cascadeOnDelete();;
+            $table->foreignId('id_genre')->constrained('genre')->cascadeOnUpdate()->cascadeOnDelete();;
             $table->timestamps();
         });
     }

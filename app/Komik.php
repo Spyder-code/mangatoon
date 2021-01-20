@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Komik extends Model
 {
+    protected $table = 'komik';
     protected $fillable = [
         'id_user',
         'jenis',
